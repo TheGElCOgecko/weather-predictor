@@ -1,10 +1,25 @@
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [message, setMessage] = useState(null);
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/')
+      .then(response => {
+        setMessage(response.data);
+      })
+      .catch(err => {
+        console.error('There was an error making the request!', err);
+      });
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
+        <p>Message: {message}</p>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
