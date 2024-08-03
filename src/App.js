@@ -20,7 +20,15 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>Message: {message}</p>
-        <img src={logo} className="App-logo" alt="logo" />
+        <div class="a-box">
+          <h2>This is a box</h2>
+          <ul class="a-list">
+            <li class = "list-stuff">This</li>
+            <li class = "list-stuff">is</li>
+            <li class = "list-stuff">a</li>
+            <li class = "list-stuff">list!!!!!! !!!!!</li>
+          </ul>
+        </div>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
