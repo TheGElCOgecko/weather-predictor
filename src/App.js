@@ -4,12 +4,14 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const apiKey = process.env.API_KEY_TEST; // not real api key
   const [message, setMessage] = useState(null);
+  console.log(apiKey);
 
   useEffect(() => {
     axios.get('http://localhost:5000/')
       .then(response => {
-        setMessage(response.data);
+        setMessage(response.data); 
       })
       .catch(err => {
         console.error('There was an error making the request!', err);
@@ -19,16 +21,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Message: {message}</p>
-        <div class="a-box">
-          <h2>This is a box</h2>
-          <ul class="a-list">
-            <li class = "list-stuff">This</li>
-            <li class = "list-stuff">is</li>
-            <li class = "list-stuff">a</li>
-            <li class = "list-stuff">list!!!!!! !!!!!</li>
-          </ul>
-        </div>
+        <p>Message: {apiKey} {message}</p>
+        <div id="map"></div>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>

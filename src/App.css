@@ -18,19 +18,12 @@
   color: white;
 }
 
+#map {
+  border: 2px solid #444;
+  width: 70vw;
+  height: 65vh;
+}
+
 .App-link {
   color: #61dafb;
-}
-
-.a-box{
-  border: 1px solid white;
-  padding: 0px 30px;
-}
-
-.list-stuff{
-  list-style-type: none;
-}
-
-.list-stuff {
-  text-align: left;
 }
