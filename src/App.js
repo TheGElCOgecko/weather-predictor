@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Message: {apiKey} {message}</p>
+        <p>Message: {message}</p>
         <div id="map">
           <Map/>
         </div>
