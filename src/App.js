@@ -1,17 +1,18 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Map from './Map'
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const apiKey = process.env.API_KEY_TEST; // not real api key
+  const apiKey = process.env.REACT_APP_API_KEY_TEST; // not real api key
   const [message, setMessage] = useState(null);
   console.log(apiKey);
 
   useEffect(() => {
     axios.get('http://localhost:5000/')
       .then(response => {
-        setMessage(response.data); 
+        setMessage(response.data);
       })
       .catch(err => {
         console.error('There was an error making the request!', err);
@@ -22,7 +23,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>Message: {apiKey} {message}</p>
-        <div id="map"></div>
+        <div id="map">
+          <Map/>
+        </div>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
