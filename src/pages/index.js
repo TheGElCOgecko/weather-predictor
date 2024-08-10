@@ -1,8 +1,9 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Map from './Map'
+import styles from './index.module.css'; // Import CSS Module
+
+import axios from 'axios';
+import Map from './Map';
 import logo from './logo.svg';
-import './App.css';
 
 function App() {
   const apiKey = process.env.REACT_APP_API_KEY_TEST; // not real api key
@@ -20,17 +21,17 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className={styles.App}>
+      <header className={styles['App-header']}>
         <p>Message: {message}</p>
         <div id="map">
-          <Map/>
+          <Map />
         </div>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
-          className="App-link"
+          className={styles['App-link']}
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
